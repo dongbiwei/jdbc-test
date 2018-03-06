@@ -1,0 +1,35 @@
+group 'com.uas.test'
+version '1.0-SNAPSHOT'
+buildscript {
+    ext {
+        springBootVersion = '1.5.9.RELEASE'
+    }
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://repo.spring.io/libs-release" }
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    maven { url "http://repo.spring.io/libs-release" }
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile 'mysql:mysql-connector-java:5.1.44'
+    compile "org.springframework.boot:spring-boot-starter-jdbc"
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+}

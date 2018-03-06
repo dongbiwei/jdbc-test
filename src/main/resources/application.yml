@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://[IP]:[PORT]/test?characterEncoding=utf-8&allowMultiQueries=true&rewriteBatchedStatements=true
+    username: [USERNAME]
+    password: [PASSWORD]
